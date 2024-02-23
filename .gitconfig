@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+
+[user]
+	email = williamfulle@gmail.com
+	name = William Fuller
+[pull]
+	rebase = true
+[core]
+	editor = nvim
+[includeIf "gitdir:~/superg/"]
+	path = ~/superg/.gitconfig
