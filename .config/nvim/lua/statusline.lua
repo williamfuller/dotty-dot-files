@@ -57,7 +57,7 @@ local function lsp()
     info = "i" .. count["info"]
   end
 
-  return errors .. warnings .. hints .. info 
+  return errors .. " " .. warnings .. " " .. hints .. " " .. info 
 end
 
 vim.api.nvim_create_autocmd({"BufEnter", "WinEnter","ModeChanged"}, {

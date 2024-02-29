@@ -7,7 +7,7 @@ Plug('neovim/nvim-lspconfig')
 
 Plug('nvim-lua/plenary.nvim')
 
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
+Plug('nvim-treesitter/nvim-treesitter')
 
 Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.5' })
 
@@ -23,13 +23,10 @@ Plug('lewis6991/gitsigns.nvim')
 
 Plug('prettier/vim-prettier', { ['do'] = 'yarn install --frozen-lockfile --production', ['for'] = {'javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'} })
 
-Plug('navarasu/onedark.nvim')
-
 vim.call('plug#end')
 
 -- simple config plugins
 require('gitsigns').setup({
-	current_line_blame = true,
 	signs = {
 		add          = { text = '+'},
     		change       = { text = '│' },
@@ -39,8 +36,3 @@ require('gitsigns').setup({
 		untracked    = { text = '┆' },
   },
 })
-
-require('onedark').setup{
-	style='warmer'
-}
-require('onedark').load()
