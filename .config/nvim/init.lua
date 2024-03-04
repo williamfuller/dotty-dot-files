@@ -13,5 +13,6 @@ local theme = require('tokyonight')
 
 theme.setup({
 	transparent = true,
+	style = 'storm',
 })
 theme.load()
