@@ -23,6 +23,10 @@ Plug('lewis6991/gitsigns.nvim')
 
 Plug('prettier/vim-prettier', { ['do'] = 'yarn install --frozen-lockfile --production', ['for'] = {'javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'} })
 
+Plug('lukas-reineke/indent-blankline.nvim')
+
+Plug('folke/tokyonight.nvim')
+
 vim.call('plug#end')
 
 -- simple config plugins
@@ -36,3 +40,5 @@ require('gitsigns').setup({
 		untracked    = { text = '┆' },
   },
 })
+
+require('ibl').setup()
