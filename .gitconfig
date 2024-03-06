@@ -11,5 +11,5 @@
 	rebase = true
 [core]
 	editor = nvim
-[includeIf "gitdir:~/superg/"]
+[includeIf "gitdir:~/superg/app/"]
 	path = ~/superg/.gitconfig
