@@ -6,13 +6,22 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Activate LSPs
 local lspconfig = require('lspconfig')
-local servers = { 'gopls', 'tailwindcss', 'tsserver', 'jsonls' }
+local servers = { 'gopls', 'tailwindcss', 'tsserver', 'jsonls', 'elmls'}
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
-    capabilites = capabilities,
+    capabilities = capabilities,
   }
 end
+
+lspconfig.clangd.setup({
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "%!clang-format",
+		})
+	end,
+})
 
 lspconfig.eslint.setup({
   settings = {

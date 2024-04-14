@@ -6,6 +6,8 @@ vim.opt.clipboard = 'unnamedplus'   -- use system clipboard
 vim.opt.mouse = 'a'                 -- allow the mouse to be used in Nvim
 
 vim.opt.smartindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
