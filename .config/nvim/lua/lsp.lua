@@ -14,6 +14,16 @@ for _, lsp in pairs(servers) do
   }
 end
 
+lspconfig.gopls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+		settings = {
+			gopls = {
+			buildFlags =  {"-tags=test"},
+			}
+    }
+}
+
 lspconfig.clangd.setup({
 	on_attach = function(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
