@@ -27,6 +27,8 @@ Plug('lukas-reineke/indent-blankline.nvim')
 
 Plug('folke/tokyonight.nvim')
 
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
+
 vim.call('plug#end')
 
 -- simple config plugins
