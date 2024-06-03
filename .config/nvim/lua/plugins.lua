@@ -29,6 +29,8 @@ Plug('folke/tokyonight.nvim')
 
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
+Plug('stevearc/oil.nvim')
+
 vim.call('plug#end')
 
 -- simple config plugins
@@ -52,3 +54,4 @@ require('gitsigns').setup({
 })
 
 require('ibl').setup()
+require('oil').setup()
