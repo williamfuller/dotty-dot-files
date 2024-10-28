@@ -6,7 +6,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Activate LSPs
 local lspconfig = require('lspconfig')
-local servers = { 'gopls', 'tailwindcss', 'tsserver', 'jsonls', 'elmls'}
+local servers = { 'gopls', 'tailwindcss', 'tsserver', 'jsonls'}
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -77,6 +77,17 @@ vim.api.nvim_create_autocmd('BufWritePre',  {
     end
     vim.lsp.buf.format({async = false})
   end }) 
+
+vim.api.nvim_create_autocmd("Filetype", {
+	pattern = { "html", "shtml", "htm" },
+	callback = function()
+		vim.lsp.start({
+			name = "superhtml",
+			cmd = { "superhtml", "lsp" },
+			root_dir = vim.fs.dirname(vim.fs.find({".git"}, { upward = true })[1])
+		})
+	end
+ })
 
 -- Signs
 local signs = { Error = "×", Warn = "!", Hint = "i", Info = "i" }
