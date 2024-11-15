@@ -6,7 +6,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Activate LSPs
 local lspconfig = require('lspconfig')
-local servers = { 'gopls', 'tailwindcss', 'tsserver', 'jsonls'}
+local servers = { 'gopls', 'tailwindcss', 'ts_ls', 'jsonls'}
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
