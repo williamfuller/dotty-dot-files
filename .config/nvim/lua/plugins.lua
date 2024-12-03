@@ -53,5 +53,10 @@ require('gitsigns').setup({
   },
 })
 
+require('nvim-treesitter').setup({
+	ensure_installed = {"elixir"},
+	highlight = {enable = true},
+})
+
 require('ibl').setup()
 require('oil').setup()

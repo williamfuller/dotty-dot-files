@@ -14,6 +14,18 @@ for _, lsp in pairs(servers) do
   }
 end
 
+lspconfig.elixirls.setup {
+		cmd = {"/home/william/elixir-ls/language_server.sh"},
+    capabilities = capabilities,
+		vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = { "*.ex", "*.exs" },
+				callback = function()
+						vim.lsp.buf.format({ async = false })
+				end,
+		})
+
+}
+
 lspconfig.gopls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
