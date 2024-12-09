@@ -31,6 +31,8 @@ Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
 Plug('stevearc/oil.nvim')
 
+Plug('elixir-editors/vim-elixir')
+
 vim.call('plug#end')
 
 -- simple config plugins
