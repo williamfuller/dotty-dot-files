@@ -31,8 +31,6 @@ Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
 Plug('stevearc/oil.nvim')
 
-Plug('elixir-editors/vim-elixir')
-
 vim.call('plug#end')
 
 -- simple config plugins
@@ -56,7 +54,6 @@ require('gitsigns').setup({
 })
 
 require('nvim-treesitter').setup({
-	ensure_installed = {"elixir"},
 	highlight = {enable = true},
 })
 

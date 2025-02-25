@@ -14,18 +14,6 @@ for _, lsp in pairs(servers) do
   }
 end
 
-lspconfig.elixirls.setup {
-		cmd = {"/home/william/elixir-ls/language_server.sh"},
-    capabilities = capabilities,
-		vim.api.nvim_create_autocmd("BufWritePre", {
-				pattern = { "*.ex", "*.exs" },
-				callback = function()
-						vim.lsp.buf.format({ async = false })
-				end,
-		})
-
-}
-
 lspconfig.gopls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -128,6 +116,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gt',"<cmd>vs | lua vim.lsp.buf.definition()<CR>", opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
